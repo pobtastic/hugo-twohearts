@@ -10,3 +10,7 @@
 <link rel="stylesheet" href='{{ "css/magnific-popup.css" | absURL }}'>
 <link rel="stylesheet" href='{{ "css/owl.carousel.min.css" | absURL }}'>
 <link rel="stylesheet" href='{{ "css/owl.theme.default.min.css" | absURL }}'>
+
+<script type="application/json" data-hugo-selector="hugo-settings-json">
+{{ dict "wedding_date" .Site.Params.date "google_api_key" .Site.Params.google_api_key "map_center" .Site.Params.map_center "map_zoom" .Site.Params.map_zoom "geocode_addresses" .Site.Params.map_addresses | jsonify | safeJS }}
+</script>

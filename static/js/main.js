@@ -3,7 +3,14 @@
 
 	"use strict";
 
-	$(window).stellar({
+  // Use direct child elements to harden against XSS exploits when CSP is on.
+  var settingsElement = document.querySelector('head > script[type="application/json"][data-hugo-selector="hugo-settings-json"], body > script[type="application/json"][data-hugo-selector="hugo-settings-json"]');
+  window.hugoSettings = {};
+  if (settingsElement !== null) {
+    window.hugoSettings = JSON.parse(settingsElement.textContent);
+  }
+
+  $(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
     parallaxElements: true,
@@ -232,14 +239,14 @@
 	};
 	contentWayPoint();
 
-	// magnific popup
-	$('.image-popup').magnificPopup({
+  // magnific popup
+  $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     closeBtnInside: false,
     fixedContentPos: true,
     mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
+    gallery: {
       enabled: true,
       navigateByImgClick: true,
       preload: [0,1] // Will preload 0 - before current, and 1 after the current image
@@ -266,7 +273,7 @@
 
 	function makeTimer() {
 
-		var endTime = (Date.parse(weddingDate) / 1000);
+		var endTime = (Date.parse(hugoSettings.wedding_date) / 1000);
 
 		var now = new Date();
 		now = (Date.parse(now) / 1000);

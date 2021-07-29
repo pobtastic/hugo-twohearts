@@ -1,0 +1,15 @@
+[organizer]
+title = "Organizer"
+target = "#"
+
+[venue]
+title = "Venue"
+target = "#"
+
+[ceremony]
+title = "Wedding Ceremony"
+target = "#"
+
+[accomodation]
+title = "Accomodation"
+target = "#"

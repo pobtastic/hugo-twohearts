@@ -3,7 +3,7 @@
 
 name = "Hugo TwoHearts"
 license = "MIT"
-licenselink = "https://github.com/pobtastic/hugo-twohearts/blob/master/LICENSE"
+licenselink = "https://github.com/pobtastic/hugo-twohearts/blob/main/LICENSE"
 description = "A Hugo theme for pretty, quick and simple wedding based single-page website."
 homepage = "https://github.com/pobtastc/hugo-twohearts"
 tags = [

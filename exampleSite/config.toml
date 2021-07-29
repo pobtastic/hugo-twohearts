@@ -10,7 +10,12 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   description = "Far far away, behind the word mountains, far from the countries."
 
   date = "28 December 2021 9:56:00 GMT+01:00"
+
+  # Javascript configs.
   google_api_key = "xxxxxx"
+  map_center = {'lat' = 40.69847032728747, 'lng' = -73.9514422416687}
+  map_addresses = ['New York']
+  map_zoom = 7
 
   address = "203 Fake St. Mountain View, San Francisco, California, USA"
   email = "info@yourdomain.com"
@@ -19,8 +24,14 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   copyright = 'Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved'
   byline = 'This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>'
 
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  favicon = "images/favicon.png"
+
   # This theme will, by default, inject a design-by-line at the bottom of the page.
   # hidedesignbyline = true
+
+  [params.meta]
+    keywords = "some, keywords, for, seo, you, know, google, duckduckgo, and, such"
 
 [markup]
   [markup.goldmark]
