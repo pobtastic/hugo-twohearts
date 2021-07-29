@@ -1,0 +1,12 @@
+<div class="col-md-12 d-flex align-items-stretch">
+  <div class="bride-groom ftco-animate d-md-flex">
+    <div class="img {{ if eq .Params.position "right" }}order-md-last ml-md-5{{ else }}mr-md-5{{ end }}" style="background-image:url({{ .Params.background }})"></div>
+    <div class="text {{ if eq .Params.position "right" }}text-md-right pl-md-5 mr-md-5{{ else }}ml-md-5 pr-md-5{{ end }}">
+      <h2>{{ .Title }}</h2>
+      {{ .Content }}
+      <div class="icon icon-{{ .Params.position }}">
+        <span class="{{ .Params.icon }}"></span>
+      </div>
+    </div>
+  </div>
+</div>

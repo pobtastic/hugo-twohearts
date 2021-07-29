@@ -1,0 +1,17 @@
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $sections := $headless.Resources.ByType "page" }}
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">{{ .Site.Params.brand }}</a>
+    <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav nav ml-auto">
+        {{ range where $sections ".Params.header_menu" "eq" true -}}
+          <li class="nav-item"><a href="{{ .Slug }}" class="nav-link"><span>{{ .Title }}</span></a></li>
+        {{ end -}}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $whenwhere := $headless.Resources.Match "when-where/when-where*" }}
+
+<section class="ftco-section ftco-no-pt ftco-no-pb bg-light" id="when-where-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 ftco-animate d-flex">
+        <div id="map" class="bg-white"></div>
+      </div>
+      <div class="col-md-7 py-5 pl-md-5">
+        <div class="row py-md-4">
+          <div class="col-md-12 text-center heading-section pb-4 ftco-animate">
+            <span class="subheading">{{ .Params.subheading }}</span>
+            <h2 class="mb-3">{{ .Params.heading }}</h2>
+          </div>
+          {{ range $whenwhere }}
+            {{ .Render "when-where/summary" }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

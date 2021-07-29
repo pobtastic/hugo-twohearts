@@ -1,0 +1,13 @@
+<li class="{{ if eq .Params.position "right" }}timeline-inverted {{ end }}animate-box">
+  <div class="timeline-badge" style="background-image:url({{ .Params.background }});"></div>
+  <div class="timeline-panel ftco-animate{{ if eq .Params.position "left" }} text-md-right{{ end }}">
+    <div class="icon icon-{{ .Params.position }}"><span class="{{ .Params.icon }}"></span></div>
+    <div class="timeline-heading">
+      <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+      <h3 class="timeline-title">{{ .Title }}</h3>
+    </div>
+    <div class="timeline-body">
+      {{ .Content }}
+    </div>
+  </div>
+</li>

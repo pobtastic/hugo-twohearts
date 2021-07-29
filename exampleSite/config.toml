@@ -1,0 +1,28 @@
+baseURL = "http://example.org/"
+languageCode = "en"
+title = "Twohearts - Free Bootstrap 4 Template by Colorlib"
+theme = "hugo-twohearts"
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  brand = "TwoHearts"
+  description = "Far far away, behind the word mountains, far from the countries."
+
+  date = "28 December 2021 9:56:00 GMT+01:00"
+  google_api_key = "xxxxxx"
+
+  address = "203 Fake St. Mountain View, San Francisco, California, USA"
+  email = "info@yourdomain.com"
+  telephone = "+2 392 3929 210"
+
+  copyright = 'Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved'
+  byline = 'This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>'
+
+  # This theme will, by default, inject a design-by-line at the bottom of the page.
+  # hidedesignbyline = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

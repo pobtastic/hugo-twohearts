@@ -1,0 +1,11 @@
+[twitter]
+icon = "fa-twitter"
+target = "#"
+
+[facebook]
+icon = "fa-facebook"
+target = "#"
+
+[instagram]
+icon = "fa-instagram"
+target = "#"

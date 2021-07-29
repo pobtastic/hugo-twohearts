@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $sections := $headless.Resources.ByType "page" }}
+{{ $sections := sort $sections ".Params.weight" }}
+
+  {{- range $sections -}}
+    {{- if eq .Params.template "home" -}}{{ .Render "home" }}{{- end -}}
+    {{- if eq .Params.template "intro" -}}{{ .Render "intro" }}{{- end -}}
+    {{- if eq .Params.template "groom-bride" -}}{{ .Render "groom-bride" }}{{- end -}}
+    {{- if eq .Params.template "lovestory" -}}{{ .Render "lovestory" }}{{- end -}}
+    {{- if eq .Params.template "greetings" -}}{{ .Render "greetings" }}{{- end -}}
+    {{- if eq .Params.template "people" -}}{{ .Render "people" }}{{- end -}}
+    {{- if eq .Params.template "when-where" -}}{{ .Render "when-where" }}{{- end -}}
+    {{- if eq .Params.template "rsvp" -}}{{ .Render "rsvp" }}{{- end -}}
+    {{- if eq .Params.template "gallery" -}}{{ .Render "gallery" }}{{- end -}}
+  {{- end -}}
+
+{{ end }}

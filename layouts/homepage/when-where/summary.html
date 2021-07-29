@@ -1,0 +1,12 @@
+<div class="col-md-6 d-flex ftco-animate">
+  <div class="place img">
+    <div class="text text-center">
+      <div class="icon d-flex align-items-center justify-content-center"><span class="{{ .Params.icon }}"></span></div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Date.Format "Monday, 2nd January 2006" }}<br>{{ .Params.time }}</p>
+      <p>{{ .Params.address }}</p>
+      <p><a href="tel:{{ .Params.telephone | replaceRE " " "" | replaceRE "\\([^\\)]*\\)" "" }}">{{ .Params.telephone }}</a></p>
+      <p><a href="#" class="btn-custom">See Map</a></p>
+    </div>
+  </div>
+</div>

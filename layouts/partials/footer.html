@@ -1,0 +1,60 @@
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $sections := $headless.Resources.ByType "page" }}
+<footer class="ftco-footer ftco-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">{{ .Site.Params.brand }}</h2>
+          <p>{{ .Site.Params.description }}</p>
+          <ul class="ftco-footer-social list-unstyled mt-5">
+            {{ range $.Site.Data.social_media }}
+              <li class="ftco-animate"><a href="{{ .target }}"><span class="fa {{ .icon }}"></span></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-4">
+          <h2 class="ftco-heading-2">Links</h2>
+            <ul class="list-unstyled">
+              {{ range where $sections ".Params.header_menu" "eq" true -}}
+                <li><a href="{{ .Slug }}"><span class="fa fa-check mr-2"></span>{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-check mr-2"></span>Organizer</a></li>
+                <li><a href="#"><span class="fa fa-check mr-2"></span>Venue</a></li>
+                <li><a href="#"><span class="fa fa-check mr-2"></span>Wedding Ceremony</a></li>
+                <li><a href="#"><span class="fa fa-check mr-2"></span>Accomodation</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  {{ with .Site.Params.address }}<li><span class="icon fa fa-map-marker"></span><span class="text">{{ . | markdownify }}</span></li>{{ end }}
+                  {{ with .Site.Params.telephone }}<li><a href="tel:{{ . | replaceRE " " "" }}"><span class="icon fa fa-phone"></span><span class="text">{{ . }}</span></a></li>{{ end }}
+                  {{ with .Site.Params.email }}<li><a href="mailto:{{ . }}"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">{{ . }}</span></span></a></li>{{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>{{ .Site.Params.copyright | markdownify }}{{ if not (isset .Site.Params "hidedesignbyline") }} | {{ .Site.Params.byline | markdownify }}{{ end }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

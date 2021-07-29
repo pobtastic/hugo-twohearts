@@ -1,0 +1,22 @@
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $lovestory := $headless.Resources.Match "lovestory/lovestory*" }}
+
+<section class="ftco-section ftco-love" id="lovestory-section" style="background-image: url({{ .Params.background }});">
+  <div class="container">
+    <div class="row justify-content-center pb-5">
+      <div class="col-md-12 text-center heading-section ftco-animate">
+        <span class="subheading">{{ .Params.subheading }}</span>
+        <h2 class="mb-3">{{ .Params.heading }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="timeline animate-box">
+          {{ range $lovestory }}
+            {{ .Render "lovestory/summary" }}
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

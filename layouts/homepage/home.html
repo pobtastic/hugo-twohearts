@@ -1,0 +1,17 @@
+<section id="home-section" class="herowrap js-fullheight" style="height: 700px; background-image: url({{ .Params.background }}); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row js-fullheight justify-content-center d-flex align-items-center">
+      <div class="col-md-12">
+        <div class="text text-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="{{ .Params.icon }}"></span>
+          </div>
+          <h1>{{ .Params.heading }}</h1>
+          <span class="subheading">{{ .Params.subheading }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ partial "intro" . }}
