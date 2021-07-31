@@ -1,5 +1,5 @@
-{{ $headless := .Site.GetPage "/homepage" }}
-{{ $whenwhere := $headless.Resources.Match "when-where/when-where*" }}
+{{ $headless := .Site.GetPage "when-where" }}
+{{ $whenwhere := $headless.Resources.ByType "page" }}
 
 <section class="ftco-section ftco-no-pt ftco-no-pb bg-light" id="when-where-section">
   <div class="container">
@@ -14,7 +14,7 @@
             <h2 class="mb-3">{{ .Params.heading }}</h2>
           </div>
           {{ range $whenwhere }}
-            {{ .Render "when-where/summary" }}
+            {{ .Render "summary" }}
           {{ end }}
         </div>
       </div>

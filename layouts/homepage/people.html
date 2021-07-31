@@ -1,5 +1,5 @@
-{{ $headless := .Site.GetPage "/homepage" }}
-{{ $people := $headless.Resources.Match "people/people*" }}
+{{ $headless := .Site.GetPage "people" }}
+{{ $people := $headless.Resources.ByType "page" }}
 
 <section class="ftco-section" id="people-section">
   <div class="container">
@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="carousel-friends owl-carousel ftco-owl ftco-animate">
           {{ range $people }}
-            {{ .Render "people/summary" }}
+            {{ .Render "summary" }}
           {{ end }}
         </div>
       </div>

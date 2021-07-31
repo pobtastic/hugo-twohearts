@@ -1,5 +1,5 @@
-{{ $headless := .Site.GetPage "/homepage" }}
-{{ $gallery := $headless.Resources.Match "gallery/gallery*" }}
+{{ $headless := .Site.GetPage "gallery" }}
+{{ $gallery := $headless.Resources.ByType "page" }}
 
 <section class="ftco-section ftco-no-pb" id="gallery-section">
   <div class="container-fluid px-0">
@@ -11,7 +11,7 @@
     </div>
     <div class="row no-gutters">
       {{ range $gallery }}
-        {{ .Render "gallery/summary" }}
+        {{ .Render "summary" }}
       {{ end }}
     </div>
   </div>

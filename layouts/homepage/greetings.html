@@ -1,5 +1,5 @@
-{{ $headless := .Site.GetPage "/homepage" }}
-{{ $greetings := $headless.Resources.Match "greetings/greetings*" }}
+{{ $headless := .Site.GetPage "greetings" }}
+{{ $greetings := $headless.Resources.ByType "page" }}
 
 <section class="ftco-section testimony-section bg-light" id="greeting-section">
   <div class="container">
@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="carousel-testimony owl-carousel ftco-owl">
           {{ range $greetings }}
-            {{ .Render "greetings/summary" }}
+            {{ .Render "summary" }}
           {{ end }}
         </div>
       </div>

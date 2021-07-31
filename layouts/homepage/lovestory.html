@@ -1,5 +1,5 @@
-{{ $headless := .Site.GetPage "/homepage" }}
-{{ $lovestory := $headless.Resources.Match "lovestory/lovestory*" }}
+{{ $headless := .Site.GetPage "lovestory" }}
+{{ $lovestory := $headless.Resources.ByType "page" }}
 
 <section class="ftco-section ftco-love" id="lovestory-section" style="background-image: url({{ .Params.background }});">
   <div class="container">
@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <ul class="timeline animate-box">
           {{ range $lovestory }}
-            {{ .Render "lovestory/summary" }}
+            {{ .Render "summary" }}
           {{ end }}
         </ul>
       </div>

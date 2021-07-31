@@ -1,5 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en"
+DefaultContentLanguage = "en"
 title = "Twohearts - Free Bootstrap 4 Template by Colorlib"
 theme = "hugo-twohearts"
 
